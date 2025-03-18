@@ -29,3 +29,30 @@ function missing(num){
 
 }
 console.log(missing(num))
+
+let num2 = [4, 1, 2, 1, 2];
+
+function findUnique(num2) {
+    let sumUnique = 0;
+    let sumAll = 0;
+
+    for(let i = 0;i < num2.length;i++){
+        sumAll += num2[i];
+        let isUnique = true
+        for (let j = 0; j < i; j++){
+            if (num2[i] === num2[j]){
+                isUnique = false
+                break
+            }
+        }
+        if (isUnique){
+            sumUnique += num2[i]
+        }
+    }
+    return 2 * sumUnique - sumAll;
+
+
+
+}
+
+console.log(findUnique(num2));
