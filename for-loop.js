@@ -61,38 +61,49 @@
 
 
 
-const name = "leetcode"
-function countKeyWord(name){
-    let removeSpace = name.split(' ').join('')
-    let obj = {}
-    for (let char of removeSpace){
-        obj[char[0]] = (obj[char[0]] || 0) +1
+// const name = "leetcode"
+// function countKeyWord(name){
+//     let removeSpace = name.split(' ').join('')
+//     let obj = {}
+//     for (let char of removeSpace){
+//         obj[char[0]] = (obj[char[0]] || 0) +1
+//
+//     }
+//     for (let i = 0 ; i < name.length ; i++){
+//         if ((obj[name[i]]) === 1){
+//             return i
+//         }
+//         console.log(obj[name[i]])
+//
+//
+//
+//     }
+//     return -1
+//
+// }
+//
+// console.log(countKeyWord(name)
+// )
 
+
+gain = [-5, 1, 5, 0, -7]
+
+function findHeighest (gain){
+    let highest = 0;
+    let initial = 0
+    for(let i = 0;i<gain.length;i++){
+        initial += gain[i]
+        console.log(gain[i],'gain')
+        highest = Math.max(highest,initial);
     }
-    for (let i = 0 ; i < name.length ; i++){
-        if ((obj[name[i]]) === 1){
-            return i
-        }
-        console.log(obj[name[i]])
-
-
-
-    }
-    return -1
+    console.log(highest,'highest')
+    console.log(initial)
+    return highest
 
 }
 
-console.log(countKeyWord(name)
-)
-
-
-
-
-
-
-
-
-
+const value = findHeighest(gain)
+console.log(value)
 
 
 
