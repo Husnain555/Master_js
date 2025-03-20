@@ -93,11 +93,8 @@ function findHeighest (gain){
     let initial = 0
     for(let i = 0;i<gain.length;i++){
         initial += gain[i]
-        console.log(gain[i],'gain')
         highest = Math.max(highest,initial);
     }
-    console.log(highest,'highest')
-    console.log(initial)
     return highest
 
 }
