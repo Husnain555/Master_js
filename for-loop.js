@@ -88,7 +88,7 @@
 
 gain = [-5, 1, 5, 0, -7]
 
-function findHeighest (gain){
+function findHighest (gain){
     let highest = 0;
     let initial = 0
     for(let i = 0;i<gain.length;i++){
@@ -99,7 +99,7 @@ function findHeighest (gain){
 
 }
 
-const value = findHeighest(gain)
+const value = findHighest(gain)
 console.log(value)
 
 
