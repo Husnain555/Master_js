@@ -86,39 +86,69 @@
 // )
 
 
-gain = [-5, 1, 5, 0, -7]
+// gain = [-5, 1, 5, 0, -7]
+//
+// function findHighest (gain){
+//     let highest = 0;
+//     let initial = 0
+//     for(let i = 0;i<gain.length;i++){
+//         initial += gain[i]
+//         highest = Math.max(highest,initial);
+//     }
+//     return highest
+//
+// }
+//
+// const value = findHighest(gain)
+// console.log(value)
+//
+//
+//
+//
 
-function findHighest (gain){
-    let highest = 0;
-    let initial = 0
-    for(let i = 0;i<gain.length;i++){
-        initial += gain[i]
-        highest = Math.max(highest,initial);
+
+// find the index of a
+
+// const words = ["leet","code"]
+// const x  ="e"
+// function findIndex(words,x){
+// let result = []
+// for(let i = 0 ; i < words.length ; i++){
+//     if(words[i].includes(x)){
+//         result.push(i)
+//     }
+//
+// }
+// return result
+//
+// }
+//
+// let value = findIndex(words,x)
+// console.log(value)
+//
+
+// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+const nums = [2,7,11,15]
+const target = 9
+function findtargetIndex (nums,target){
+    let result = new Map()
+    for (let i = 0 ; i < nums.length ; i++){
+        let complement = target - nums[i]
+        console.log(complement)
+        if (result.has(complement)){
+           return [result.get(complement),i]
+        }
+        result.set(nums[i],i)
+
     }
-    return highest
+    return []
 
 }
 
-const value = findHighest(gain)
+
+
+const value = findtargetIndex(nums, target);
 console.log(value)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
