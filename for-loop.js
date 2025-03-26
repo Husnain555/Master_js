@@ -128,35 +128,74 @@
 //
 
 // Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-const nums = [2,7,11,15]
-const target = 9
-function findtargetIndex (nums,target){
-    let result = new Map()
-    for (let i = 0 ; i < nums.length ; i++){
-        let complement = target - nums[i]
-        console.log(complement)
-        if (result.has(complement)){
-           return [result.get(complement),i]
+// const nums = [2,7,11,15]
+// const target = 9
+// function findtargetIndex (nums,target){
+//     let result = new Map()
+//     for (let i = 0 ; i < nums.length ; i++){
+//         let complement = target - nums[i]
+//         console.log(complement)
+//         if (result.has(complement)){
+//            return [result.get(complement),i]
+//         }
+//         result.set(nums[i],i)
+//
+//     }
+//     return []
+//
+// }
+//
+//
+//
+// const value = findtargetIndex(nums, target);
+// console.log(value)
+//
+//
+//
+//
+
+
+
+
+
+// Running Sum of 1d Array
+
+// const array = [0,63,-23,60,-27,-73,-53,-5,63,68,-85,-82,-1,-11,96,19,33,-72,-93,-44,-65,-60,17,95,-98,-43,-67];
+// function sumOfArray(num) {
+//     let sum = [];
+//     let count = 0;
+//     for(let i = 0;i<num.length;i++) {
+//         console.log(num[i],'here the num i ');
+//         count += num[i];
+//             sum.push(count);
+//
+//     }
+//     return sum;
+// }
+// const value = sumOfArray(array)
+// console.log(value)
+//
+
+
+// Richest Customer Wealth
+
+
+const input = [[1,5],[7,3],[3,5]]
+
+function findTheRichest(input){
+    let sum = 0
+    for(let i = 0;i<input.length;i++){
+        let count = 0
+
+        for(let j=0;j<input[i].length;j++){
+            count+=input[i][j]
+            sum = Math.max(sum,count)
         }
-        result.set(nums[i],i)
-
     }
-    return []
-
+    return sum
 }
 
-
-
-const value = findtargetIndex(nums, target);
+const value = findTheRichest(input)
 console.log(value)
-
-
-
-
-
-
-
-
-
 
 
