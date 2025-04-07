@@ -199,3 +199,32 @@
 // console.log(value)
 //
 
+const nums = [1,5,11,5]
+function canPartition(nums){
+    let sum = 0
+    for (let i = 0 ; i < nums.length ; i++){
+        sum += nums[i]
+    }
+    console.log(sum,'here the totAL')
+    let checkOdd = sum % 2 === 0
+    const target = sum /2
+    if (checkOdd === true ){
+        let currentSum = 0;
+
+        for (let i = 0 ; i < nums.length ; i++){
+            currentSum += nums[i];
+            if(target === currentSum){
+                console.log(currentSum,'target found')
+                return true
+            }
+        }
+
+    }else{
+        return false
+
+    }
+
+
+}
+
+let ans = canPartition(nums)
