@@ -200,31 +200,25 @@
 //
 
 const nums = [1,5,11,5]
-function canPartition(nums){
-    let sum = 0
-    for (let i = 0 ; i < nums.length ; i++){
-        sum += nums[i]
-    }
-    console.log(sum,'here the totAL')
-    let checkOdd = sum % 2 === 0
-    const target = sum /2
-    if (checkOdd === true ){
-        let currentSum = 0;
-
-        for (let i = 0 ; i < nums.length ; i++){
-            currentSum += nums[i];
-            if(target === currentSum){
-                console.log(currentSum,'target found')
-                return true
-            }
+const nums2 = [1,2,5]
+function canPartition(nums) {
+    let sum = nums.reduce((a,b)=>a+b,0)
+    if (sum % 2 !== 0) return false
+    let target = sum /2
+    let possible = new Set([0])
+    for (let num of nums) {
+        let newPossible = new Set(possible);
+        for (let s of possible) {
+            if (s + num === target) return true;
+            newPossible.add(s + num);
         }
-
-    }else{
-        return false
-
+        possible = newPossible;
     }
+
+    return possible.has(target);
 
 
 }
+
 
 let ans = canPartition(nums)
