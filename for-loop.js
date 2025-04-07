@@ -179,23 +179,23 @@
 
 // Richest Customer Wealth
 
-
-const input = [[1,5],[7,3],[3,5]]
-
-function findTheRichest(input){
-    let sum = 0
-    for(let i = 0;i<input.length;i++){
-        let count = 0
-
-        for(let j=0;j<input[i].length;j++){
-            count+=input[i][j]
-            sum = Math.max(sum,count)
-        }
-    }
-    return sum
-}
-
-const value = findTheRichest(input)
-console.log(value)
-
+//
+// const input = [[1,5],[7,3],[3,5]]
+//
+// function findTheRichest(input){
+//     let sum = 0
+//     for(let i = 0;i<input.length;i++){
+//         let count = 0
+//
+//         for(let j=0;j<input[i].length;j++){
+//             count+=input[i][j]
+//             sum = Math.max(sum,count)
+//         }
+//     }
+//     return sum
+// }
+//
+// const value = findTheRichest(input)
+// console.log(value)
+//
 
